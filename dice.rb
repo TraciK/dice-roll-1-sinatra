@@ -14,42 +14,61 @@ end
 
 
 get("/dice/2/6") do
-  first_die = rand(1..6)
-  second_die = rand(1..6)
-  sum = first_die + second_die
-  
-  @outcome = "You rolled a #{first_die} and a #{second_die} for a total of #{sum}."
+  @rolls = []    # Create a blank array
+
+  2.times do    # 100 times...
+    die = rand(1..6)    # Generate a random number
+
+    @rolls.push(die)    # Add the random number to the array 
+  end
   
  erb(:two_six)
 end
 
 get("/dice/2/10") do
-  first_die = rand(1..10)
-  second_die = rand(1..10)
-  sum = first_die + second_die
+  @rolls = []    # Create a blank array
 
-  @outcome = "You rolled a #{first_die} and a #{second_die} for a total of #{sum}"
+  1002.times do    # 100 times...
+    die = rand(1..10)    # Generate a random number
+
+    @rolls.push(die)    # Add the random number to the array 
+  end
 
   erb(:two_ten)
 end
 
 get("/dice/1/20") do
-  die = rand(1..20)
-  
-  @outcome = "You rolled a #{die}"
+   @rolls = []    # Create a blank array
+
+  1.times do    # 100 times...
+    die = rand(1..20)    # Generate a random number
+
+    @rolls.push(die)    # Add the random number to the array 
+  end
  
   erb(:one_twenty)
 end
 
 get("/dice/5/4") do
-  first_die = rand(1..4)
-  second_die = rand(1..4)
-  third_die = rand(1..4)
-  fourth_die = rand(1..4)
-  fifth_die = rand(1..4)
-  sum = first_die + second_die + third_die + fourth_die + fifth_die
+  @rolls = []    # Create a blank array
 
-  @outcome = "You rolled a #{first_die}, a #{second_die}, a #{third_die}, a #{fourth_die}, and a #{fifth_die} for a total of #{sum}"
+  5.times do    # 100 times...
+    die = rand(1..4)    # Generate a random number
+
+    @rolls.push(die)    # Add the random number to the array 
+  end
   
  erb(:five_four)
+end
+
+get("/dice/100/6") do
+  @rolls = []    # Create a blank array
+
+  100.times do    # 100 times...
+    die = rand(1..6)    # Generate a random number
+
+    @rolls.push(die)    # Add the random number to the array 
+  end
+
+  erb(:one_hundred_six)
 end
